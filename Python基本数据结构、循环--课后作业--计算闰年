@@ -1,0 +1,20 @@
+this_year = input('请输入年份，输入exit退出:')
+
+while this_year != 'exit':
+
+    v_year = int(this_year)
+
+    if v_year % 100 == 0:
+        if v_year % 400 == 0:
+            print(v_year, '是闰年')
+        else:
+            print(v_year, '不是闰年')
+    else:
+        if v_year % 4 == 0:
+            print(v_year, '是闰年')
+        else:
+            print(v_year, '不是闰年')
+
+    this_year = input('请输入年份，输入exit退出:')
+
+print('退出')
