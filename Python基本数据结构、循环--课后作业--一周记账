@@ -1,0 +1,32 @@
+income = []
+expend = []
+
+print('----------请分别输入周一至周日的收入----------')
+for i in range(7):
+    get_input = input('星期'+str(i+1)+'的收入为：')
+    income.append(float(get_input))
+
+print('----------以下请分别输入周一至周日的支出----------')
+for i in range(7):
+    get_input = input('星期'+str(i+1)+'的支出为：')
+    expend.append(float(get_input))
+
+print('七天的收入分别为：', income)
+
+print('七天的支出分别为：', expend)
+
+#计算7天的结余
+balance = dict()
+
+for i in range(7):
+     balance[i+1] = income[i] - expend[i]
+print('七天的结余分别为', balance)
+
+
+#计算最终结余
+final = 0
+for i in range(len(balance)):
+    day = 1
+    final += float(balance[day])
+    day += 1
+print('最终结余:', final)
