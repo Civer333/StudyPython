@@ -1,0 +1,50 @@
+print('-----------------------\n'
+      '欢迎进入Civer银行\n'
+      '1.查询余额\n'
+      '2.存款\n'
+      '3.取款\n'
+      '4.退出\n'
+      '-----------------------\n')
+
+# 获取动作
+get_action = input('请输入您要办理的业务：')
+# 初始化余额为0
+balance = 0
+# 变动金额
+# change = 0
+
+while get_action != '4' and get_action != 'exit':
+
+      if get_action == '1' or get_action == '查询余额':
+            print('您的余额为:',balance)
+
+      elif get_action == '2' or get_action == '存款':
+            get_input = input('请输入您要存入的金额:')
+            change = float(get_input)
+            if change > 0:
+                balance = balance + change
+            else:
+                print('你存入的金额必须大于0')
+
+      elif get_action == '3' or get_action == '取款':
+            get_input = input('请输入您要取出的金额:')
+            change = float(get_input)
+            if change > 0:
+                  if balance < change:
+                        print('您的余额不足')
+                  else:
+                        balance = balance - change
+            else:
+                print('你取出的金额必须大于0')
+
+      print('-----------------------\n'
+            '欢迎进入Civer银行\n'
+            '1.查询余额\n'
+            '2.存款\n'
+            '3.取款\n'
+            '4.退出\n'
+            '-----------------------\n')
+      # 获取动作
+      get_action = input('请输入您要办理的业务：')
+
+print('退出')
